@@ -11,19 +11,15 @@ export default async function List() {
   let result = await db.collection('post').find().toArray()
   console.log(result)
 
-  let data = { }
     return (
         <div className="list-bg">
           {
             result.map((a, i)=> 
-              
-              
                 <div className="list-item" key={i}>
                   <Link prefetch={false} href={`/detail/${a._id}`}><h4>{result[i].title}</h4></Link>
                   <p>{result[i].content}</p>
                   <DetailLink/>
                 </div>  
-              
             )
           }
       </div>
