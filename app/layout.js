@@ -3,6 +3,7 @@ import "./globals.css";
 import LoginBtn from './LoginBtn' 
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,10 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       
       <body className={inter.className}>
+      <div className="navbar"> 
+        <Link href="/" className="logo">My Next Level forum</Link> 
+        <Link href="/list">List</Link> 
+      </div>  
         {
           session==null?<LoginBtn/>  : session.user.name
         }
