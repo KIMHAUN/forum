@@ -1,5 +1,6 @@
 import { connectDB } from "@/util/database"
 import Link from 'next/link'
+import ListItem from "./ListItem";
 
 
 //export const dynamic = 'force-dynamic'
@@ -16,17 +17,7 @@ export default async function List() {
   let data = { }
     return (
         <div className="list-bg">
-          {
-            result.map((a, i)=> 
-                <div className="list-item" key={i}>
-                  <Link prefetch={false} href={`/detail/${a._id}`}><h4>{result[i].title}</h4></Link>
-                  {/* <p>{result[i].content}</p> */}
-                  <Link href={`/update/${a._id}`}><h4>✏️</h4></Link>
-                  <p>1월 1일</p>
-                </div>  
-              
-            )
-          }
+          <ListItem result={result}/>
       </div>
     )
 }
