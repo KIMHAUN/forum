@@ -23,6 +23,7 @@ export default async function RootLayout({ children }) {
       <div className="navbar"> 
         <Link href="/" className="logo">My Next Level forum</Link> 
         <Link href="/list">List</Link> 
+        <Link href="/write">Write</Link> 
       </div>  
         {
           session==null?<LoginBtn/>  : session.user.name

@@ -13,13 +13,13 @@ export default async function handler(req, res) {
     // }
 
    
-    console.log('post_id ::: ' + req.body)
-    let post_id = req.body
+    console.log('post_id ::: ' + JSON.stringify(req.query))
+    let post_id = req.query.post_id
 
     const db = (await connectDB).db("forum")  
     let result = db.collection('post').remove({ _id: new ObjectId(post_id) })   
     
-    //return result
+    res.status(200).json('삭제완료')
 
 
  
