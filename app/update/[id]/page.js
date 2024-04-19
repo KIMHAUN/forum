@@ -14,12 +14,12 @@ export default async function Update(props) {
       
         return(
             <div>
-                <h4>글 수정 페이지</h4>
+                <h2> 수정 페이지</h2>
                 <form action="/api/post/update" method="POST">
                     <input style={{display: 'none'}} name="_id" value={props.params.id} />
-                    <h2>글 제목</h2>
+                    <h4>글 제목</h4>
                     <input name="title" placeholder="글제목" defaultValue ={result.title}/>
-                    <h2>글 내용</h2>
+                    <h4>글 내용</h4>
                     <input name="content" placeholder="글내용" defaultValue ={result.content}/>
                     <button type="submit">수정</button>
                 </form>

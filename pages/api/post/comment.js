@@ -15,16 +15,20 @@ export default async function handler(req, res) {
 
     const db = (await connectDB).db("forum")
     
-    //console.log('request :::: ' + JSON.stringify(저장할거))
-    
-
     if (req.method == 'GET') {
-        let result = db.collection('comment').find({ parent_id: new ObjectId(req.body.parent_id) }).toArray()
-        console.log('result ::: ' + req.parent_id)
-        return result
+        console.log('GET!!!!')
+        
+        //let parent_id = JSON.stringify(req.query)
+        //console.log('parent_id ::: ' + JSON.stringify(req.query))
+        let parent_id = req.query.parent_id
+        let result = await db.collection('comment').find({ parent_id: new ObjectId(parent_id) }).toArray()
+        //console.log('result ::: ' + result)
+
+        res.status(200).json(result)
     }
 
-    if (req.method == 'POST') {        
+    if (req.method == 'POST') {
+        console.log('POST!!!!')
 
         req.body = JSON.parse(req.body)
         let 저장할거 = {

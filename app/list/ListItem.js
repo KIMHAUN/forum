@@ -31,8 +31,8 @@ export default function ListItem({result}) {
                         //인터넷문제 등으로 실패시 실행할코드
                         console.log(error)
                       })
-                  }}>🗑🗑️</span>
-                  <p>1월 1일</p>
+                  }}>🗑️</span>
+                  {/* <p>1월 1일</p> */}
                   
                 </div>  
               
