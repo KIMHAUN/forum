@@ -60,4 +60,16 @@
     transition: all 1s;
   }
 
-  
+  .dark-mode .navbar {
+    background: #222;
+  }
+  .dark-mode .navbar a {
+    color: white;
+  } 
+
+  .light-mode .navbar {
+    background: white;
+  }
+  .light-mode .navbar a {
+    color: #222;
+  } 
