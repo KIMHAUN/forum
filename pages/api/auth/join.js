@@ -7,7 +7,7 @@ export default async function handler(req, res) {
         let hash = await bcrypt.hash(req.body.password, 10)
         //console.log(hash)
         req.body.password = hash
-        console.log(req.body)
+        //console.log(req.body)
 
         if (req.body.name == '' ) {
             return res.status(500).json('너 id 왜 안 씀')
